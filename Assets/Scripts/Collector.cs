@@ -18,7 +18,7 @@ public class Collector : NetworkBehaviour
 		if (isServer && trigger.tag == collectableTag)
 		{
 			RpcAdd (trigger.name);
-			NetworkServer.Destroy (trigger.gameObject);
+			PoolManager.Instance.Release (trigger.gameObject);
 		}
 	}
 
