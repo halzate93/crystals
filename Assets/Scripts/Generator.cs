@@ -25,8 +25,7 @@ public class Generator : NetworkBehaviour
 	{
 		Vector3 position = transform.position + GetRandomPosition ();
 		int p = Random.Range (0, prefabs.Length);
-		GameObject instance = PoolManager.Instance.Instantiate (prefabs[p], position, Quaternion.identity);
-		NetworkServer.Spawn (instance);
+		PoolManager.Instance.Instantiate (prefabs[p], position, Quaternion.identity);
 	}
 
 	private Vector3 GetRandomPosition ()
